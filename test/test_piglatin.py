@@ -66,17 +66,17 @@ class TestPigLatin(unittest.TestCase):
                     str_lst = str_lst(char, end="elloh orldw")
         self.assertEqual("oellohay orldway", translator.get_phrase(str_lst) + "ay")
 
-    # def test_word_start_multiple_consonant_composite(self):
-    #         phrase = "well-being"
-    #         str_lst = phrase.split("-")
-    #         # str_lst
-    #         translator = PigLatin(phrase)
-    #         vowels = ['a', 'e', 'i', 'o', 'u']
-    #         for str_lst in vowels:
-    #             for char in str_lst:
-    #                 if char == vowels:
-    #                     str_lst = str_lst(char, end="ellw-eingb")
-    #         self.assertEqual("oellohay orldway", translator.get_phrase(str_lst) + "ay")
+    def test_word_start_multiple_consonant_composite(self):
+            phrase = "well-being"
+            str_lst = phrase.split("-")
+            # str_lst
+            translator = PigLatin(phrase)
+            vowels = ['a', 'e', 'i', 'o', 'u']
+            for str_lst in vowels:
+                for char in str_lst:
+                    if char == vowels:
+                        str_lst = str_lst(char, end="ellw-eingb")
+            self.assertEqual("oellohay orldway", translator.get_phrase(str_lst) + "ay")
     #
     #     # # user story 7
 
