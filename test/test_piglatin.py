@@ -43,15 +43,15 @@ class TestPigLatin(unittest.TestCase):
         self.assertEqual("ellohay",translator.get_phrase(phrase)+"hay")
     #
     # # user story 5
-    # def test_word_start_multiple_consonant(self):
-    #     phrase = "known"
-    #     translator = PigLatin(phrase)
-    #     vowels = ['a', 'e', 'i', 'o', 'u']
-    #     for phrase in vowels:
-    #         for char in phrase(0, 2):
-    #             if char == vowels:
-    #                 phrase=phrase(char, end="kn")
-    #     self.assertEqual("ownknay",translator.get_phrase(phrase)+"ay")
+    def test_word_start_multiple_consonant(self):
+        phrase = "known"
+        translator = PigLatin(phrase)
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        for phrase in vowels:
+            for char in phrase(0, 2):
+                if char == vowels:
+                    phrase=phrase(char, end="kn")
+        self.assertEqual("ownknay",translator.get_phrase(phrase)+"ay")
 
 
 

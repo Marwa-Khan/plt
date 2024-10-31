@@ -6,6 +6,3 @@ class PigLatin:
     def get_phrase(self) -> str:
         return self.phrase
 
-    def translate(self) -> str:
-        pass
-
