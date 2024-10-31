@@ -1,3 +1,4 @@
+import string
 import unittest
 from piglatin import PigLatin
 from error import PigLatinError
@@ -77,9 +78,38 @@ class TestPigLatin(unittest.TestCase):
                     if char == vowels:
                         str_lst = str_lst(char, end="ellw-eingb")
             self.assertEqual("oellohay orldway", translator.get_phrase(str_lst) + "ay")
-    #
-    #     # # user story 7
 
+    # user story 7
+    def test_word_start_multiple_consonant_whitespace_punctuation(self):
+        phrase = "hello world!"
+        for i in phrase:
+            if i in string.punctuation:
+                pun=i
+        str_lst=phrase.split()
+        # str_lst
+        translator = PigLatin(phrase)
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        for str_lst in vowels:
+            for char in str_lst:
+                if char == vowels:
+                    str_lst = str_lst(char, end="elloh orldw")
+        self.assertEqual("oellohay orldway", translator.get_phrase(str_lst) +"ay")
+
+
+    # def test_word_start_multiple_consonant_composite_punctutaion(self):
+    #         phrase = "well-being!"
+    #         for i in phrase:
+    #             if i in string.punctuation:
+    #                 pun = i
+    #         str_lst = phrase.split("-")
+    #         # str_lst
+    #         translator = PigLatin(phrase)
+    #         vowels = ['a', 'e', 'i', 'o', 'u']
+    #         for str_lst in vowels:
+    #             for char in str_lst:
+    #                 if char == vowels:
+    #                     str_lst = str_lst(char, end="ellw-eingb")
+    #         self.assertEqual("oellohay orldway", translator.get_phrase(str_lst) + "ay"+pun)
 
 
 
