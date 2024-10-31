@@ -11,11 +11,11 @@ class TestPigLatin(unittest.TestCase):
         translator = PigLatin(phrase)
         self.assertEqual("hello world",translator.get_phrase(phrase))
     #
-    # # user story 2
-    # def test_empty_phrase(self):
-    #     phrase = " "
-    #     translator = PigLatin(phrase)
-    #     self.assertEqual(" ",translator.get_phrase(phrase))
+    # user story 2
+    def test_empty_phrase(self):
+        phrase = " "
+        translator = PigLatin(phrase)
+        self.assertEqual(" ",translator.get_phrase(phrase))
     #
     # # user story 3
     # def test_word_start_vowel_end_y(self):
