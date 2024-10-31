@@ -36,11 +36,11 @@ class TestPigLatin(unittest.TestCase):
         self.assertEqual("ask",translator.get_phrase(phrase)+"askay")
     #
     # # user story 4
-    # def test_word_start_single_consonant(self):
-    #     phrase = "hello"
-    #     translator = PigLatin(phrase)
-    #     phrase=phrase[phrase:1]
-    #     self.assertEqual("ellohay",translator.get_phrase(phrase)+"hay")
+    def test_word_start_single_consonant(self):
+        phrase = "hello"
+        translator = PigLatin(phrase)
+        phrase=phrase[phrase:1]
+        self.assertEqual("ellohay",translator.get_phrase(phrase)+"hay")
     #
     # # user story 5
     # def test_word_start_multiple_consonant(self):
